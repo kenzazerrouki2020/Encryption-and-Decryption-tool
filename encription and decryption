@@ -3,7 +3,7 @@ import string
 def encrypt(message, shift):
     alphabet = string.ascii_lowercase
     encrypt_message = ''
-    dencrypt_message = ''
+    decrypt_message = ''
 
     choice = input('Do you want encrypt or decrypt? (1: encrypt / 2: decrypt): ')
 
@@ -28,16 +28,16 @@ def encrypt(message, shift):
             if letter.lower() in alphabet:
                 original_position = alphabet.index(letter.lower())
                 new_position = (original_position - shift) % 26
-                dencrypt_letter = alphabet[new_position]
+                decrypt_letter = alphabet[new_position]
 
                 if letter.isupper():
-                    dencrypt_letter = dencrypt_letter.upper()
+                    decrypt_letter = decrypt_letter.upper()
 
-                dencrypt_message += dencrypt_letter
+                decrypt_message += decrypt_letter
             else:
-                dencrypt_message += letter
+                decrypt_message += letter
 
-        print("Decrypted message:", dencrypt_message)
+        print("Decrypted message:", decrypt_message)
 
 
 user_message = input('Enter a message: ')
